@@ -1,0 +1,347 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 11, 2014 at 10:18 PM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `atimmks`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `info`
+--
+
+CREATE TABLE IF NOT EXISTS `info` (
+  `iId` int(11) NOT NULL AUTO_INCREMENT,
+  `iTgl` date NOT NULL DEFAULT '0000-00-00',
+  `iJudul` mediumtext NOT NULL,
+  `iIsi` longtext NOT NULL,
+  PRIMARY KEY (`iId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18446744073709551615 ;
+
+--
+-- Dumping data for table `info`
+--
+
+INSERT INTO `info` (`iId`, `iTgl`, `iJudul`, `iIsi`) VALUES
+(2, '2014-03-05', 'Info Login', 'Gunakan NISN untuk username dan password, setelah itu harap untuk mengubah username (tanpa spasi) untuk keamanan akun..'),
+(4, '2014-04-09', 'Info Peserta Terdaftar', 'Diharapkan bagi calon peserta yang telah melakukan registrasi, agar melengkapi biodata dan nilai.. terima kasih..');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ms_prodi`
+--
+
+CREATE TABLE IF NOT EXISTS `ms_prodi` (
+  `prId` int(11) NOT NULL AUTO_INCREMENT,
+  `prNama` varchar(100) NOT NULL,
+  PRIMARY KEY (`prId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `ms_prodi`
+--
+
+INSERT INTO `ms_prodi` (`prId`, `prNama`) VALUES
+(1, 'Teknik & Manajemen Industri (T & MI)'),
+(2, 'Teknik Mesin Industri (TMI)'),
+(3, 'Teknik Elektro Insdustri (TEI)'),
+(4, 'Teknik Kimia Industri (TKI)');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_bing`
+--
+
+CREATE TABLE IF NOT EXISTS `n_bing` (
+  `bingId` int(11) NOT NULL AUTO_INCREMENT,
+  `psNISN` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `bing1` int(3) DEFAULT NULL,
+  `bing2` int(3) DEFAULT NULL,
+  `bing3` int(3) DEFAULT NULL,
+  `bing4` int(3) DEFAULT NULL,
+  `bing5` int(3) DEFAULT NULL,
+  `bingRata` int(3) DEFAULT NULL,
+  `bingStatus` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`bingId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `n_bing`
+--
+
+INSERT INTO `n_bing` (`bingId`, `psNISN`, `bing1`, `bing2`, `bing3`, `bing4`, `bing5`, `bingRata`, `bingStatus`) VALUES
+(1, '1234567890', 80, 90, 90, 100, 100, 92, '1'),
+(3, '1234512345', 80, 90, 80, 90, 80, 84, '1'),
+(5, '1111111111', 80, 88, 80, 80, 90, 84, '1'),
+(11, '1010111111', NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(15, '1231231231', NULL, NULL, NULL, NULL, NULL, NULL, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_indo`
+--
+
+CREATE TABLE IF NOT EXISTS `n_indo` (
+  `indoId` int(11) NOT NULL AUTO_INCREMENT,
+  `psNISN` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `indo1` float DEFAULT NULL,
+  `indo2` int(3) DEFAULT NULL,
+  `indo3` int(3) DEFAULT NULL,
+  `indo4` int(3) DEFAULT NULL,
+  `indo5` int(3) DEFAULT NULL,
+  `indoRata` int(3) DEFAULT NULL,
+  `indoStatus` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`indoId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `n_indo`
+--
+
+INSERT INTO `n_indo` (`indoId`, `psNISN`, `indo1`, `indo2`, `indo3`, `indo4`, `indo5`, `indoRata`, `indoStatus`) VALUES
+(1, '1234567890', 90, 95, 95, 100, 80, 92, '1'),
+(3, '1234512345', 90, 80, 90, 80, 90, 86, '1'),
+(5, '1111111111', 80, 85, 79, 75, 70, 78, '1'),
+(11, '1010111111', NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(15, '1231231231', NULL, NULL, NULL, NULL, NULL, NULL, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ipa`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ipa` (
+  `ipaId` int(11) NOT NULL AUTO_INCREMENT,
+  `psNISN` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `ipa1` int(3) DEFAULT NULL,
+  `ipa2` int(3) DEFAULT NULL,
+  `ipa3` int(3) DEFAULT NULL,
+  `ipa4` int(3) DEFAULT NULL,
+  `ipa5` int(3) DEFAULT NULL,
+  `ipaRata` int(3) DEFAULT NULL,
+  `ipaStatus` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ipaId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `n_ipa`
+--
+
+INSERT INTO `n_ipa` (`ipaId`, `psNISN`, `ipa1`, `ipa2`, `ipa3`, `ipa4`, `ipa5`, `ipaRata`, `ipaStatus`) VALUES
+(1, '1234567890', 90, 90, 100, 90, 90, 92, '1'),
+(3, '1234512345', 90, 80, 90, 80, 90, 86, '1'),
+(5, '1111111111', 100, 90, 80, 75, 70, 83, '1'),
+(11, '1010111111', NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(15, '1231231231', NULL, NULL, NULL, NULL, NULL, NULL, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_ips`
+--
+
+CREATE TABLE IF NOT EXISTS `n_ips` (
+  `ipsId` int(11) NOT NULL AUTO_INCREMENT,
+  `psNISN` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `ips1` int(3) DEFAULT NULL,
+  `ips2` int(3) DEFAULT NULL,
+  `ips3` int(3) DEFAULT NULL,
+  `ips4` int(3) DEFAULT NULL,
+  `ips5` int(3) DEFAULT NULL,
+  `ipsRata` int(3) DEFAULT NULL,
+  `ipsStatus` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ipsId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `n_ips`
+--
+
+INSERT INTO `n_ips` (`ipsId`, `psNISN`, `ips1`, `ips2`, `ips3`, `ips4`, `ips5`, `ipsRata`, `ipsStatus`) VALUES
+(1, '1234567890', 100, 100, 90, 90, 90, 98, '1'),
+(3, '1234512345', 90, 80, 90, 90, 90, 84, '1'),
+(5, '1111111111', 74, 90, 86, 90, 95, 94, '1'),
+(11, '1010111111', NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(15, '1231231231', NULL, NULL, NULL, NULL, NULL, NULL, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `n_mm`
+--
+
+CREATE TABLE IF NOT EXISTS `n_mm` (
+  `mmId` int(11) NOT NULL AUTO_INCREMENT,
+  `psNISN` varchar(10) COLLATE latin1_general_ci NOT NULL,
+  `mm1` int(3) DEFAULT NULL,
+  `mm2` int(3) DEFAULT NULL,
+  `mm3` int(3) DEFAULT NULL,
+  `mm4` int(3) DEFAULT NULL,
+  `mm5` int(3) DEFAULT NULL,
+  `mmRata` int(3) DEFAULT NULL,
+  `mmStatus` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`mmId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `n_mm`
+--
+
+INSERT INTO `n_mm` (`mmId`, `psNISN`, `mm1`, `mm2`, `mm3`, `mm4`, `mm5`, `mmRata`, `mmStatus`) VALUES
+(1, '1234567890', 100, 100, 100, 100, 90, 98, '1'),
+(3, '1234512345', 80, 90, 80, 90, 80, 84, '1'),
+(5, '1111111111', 95, 99, 97, 98, 80, 94, '1'),
+(11, '1010111111', NULL, NULL, NULL, NULL, NULL, NULL, '0'),
+(15, '1231231231', NULL, NULL, NULL, NULL, NULL, NULL, '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pendaftar`
+--
+
+CREATE TABLE IF NOT EXISTS `pendaftar` (
+  `psNISN` varchar(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `psNoPeserta` varchar(11) NOT NULL,
+  `psTglDaftar` date NOT NULL,
+  `psNama` varchar(100) NOT NULL,
+  `psT4Lahir` varchar(100) DEFAULT NULL,
+  `psTglahir` date DEFAULT NULL,
+  `psJK` enum('L','P') NOT NULL,
+  `psAlamat` varchar(255) DEFAULT NULL,
+  `psTelp` varchar(50) DEFAULT NULL,
+  `psEmail` varchar(100) NOT NULL,
+  `psAgama` varchar(20) DEFAULT NULL,
+  `psGDarah` enum('A','B','O','AB') DEFAULT NULL,
+  `psPendidikan` varchar(10) DEFAULT NULL,
+  `psJurusan` varchar(50) DEFAULT NULL,
+  `psTahunLulus` varchar(4) DEFAULT NULL,
+  `psNamaSekolah` varchar(100) NOT NULL,
+  `psAlamatSekolah` varchar(255) DEFAULT NULL,
+  `psTelpSekolah` varchar(20) DEFAULT NULL,
+  `psNamaOT` varchar(100) DEFAULT NULL,
+  `psPekerjaanOT` varchar(50) DEFAULT NULL,
+  `psAlamatOT` varchar(255) DEFAULT NULL,
+  `psTelpOT` varchar(20) DEFAULT NULL,
+  `psPil1` int(11) DEFAULT NULL,
+  `psPil2` int(11) DEFAULT NULL,
+  `psKeinginanMasuk` enum('A','B','C','D') DEFAULT NULL,
+  `psJalurPenerimaan` enum('A','B') DEFAULT NULL,
+  `psUkuranJas` enum('XL','L','M','S') DEFAULT NULL,
+  `psInfoATIM` varchar(100) DEFAULT NULL,
+  `psPass` char(6) NOT NULL,
+  `psSt_Bio` enum('0','1') NOT NULL DEFAULT '0',
+  `psSt_Verifikasi` enum('0','1') NOT NULL DEFAULT '0',
+  `psSt_Seleksi` enum('0','1') NOT NULL DEFAULT '0',
+  `psSt_Akses` enum('0','1') NOT NULL DEFAULT '1',
+  PRIMARY KEY (`psNISN`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pendaftar`
+--
+
+INSERT INTO `pendaftar` (`psNISN`, `psNoPeserta`, `psTglDaftar`, `psNama`, `psT4Lahir`, `psTglahir`, `psJK`, `psAlamat`, `psTelp`, `psEmail`, `psAgama`, `psGDarah`, `psPendidikan`, `psJurusan`, `psTahunLulus`, `psNamaSekolah`, `psAlamatSekolah`, `psTelpSekolah`, `psNamaOT`, `psPekerjaanOT`, `psAlamatOT`, `psTelpOT`, `psPil1`, `psPil2`, `psKeinginanMasuk`, `psJalurPenerimaan`, `psUkuranJas`, `psInfoATIM`, `psPass`, `psSt_Bio`, `psSt_Verifikasi`, `psSt_Seleksi`, `psSt_Akses`) VALUES
+('1234567890', '20140409001', '2014-04-09', 'Hardiknas', 'Tual', '1991-05-02', 'L', 'BTN Trika C No.16 Makassar', '1111113221324', 'ardhea014defourteenz@gmail.com', 'Islam', '', 'SMA', 'IPA', '', 'SMA 1 Kei Kecil, Tual', 'JL. Jendral Sudirman', '12113122121', 'Hj. Samsinar', 'IBU RT', 'Jl. Fidnang Armau, tual', '132443233', 1, 2, 'A', 'A', 'XL', 'Teman', '123123', '1', '0', '0', '1'),
+('1234512345', '20140410001', '2014-04-10', 'Abdul Haris', NULL, NULL, 'L', NULL, NULL, 'haris@gmail.com', NULL, NULL, NULL, NULL, NULL, 'SMK 1 Ende', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'harhar', '0', '0', '0', '1'),
+('1111111111', '20140411001', '2014-04-11', 'Amran', 'Ujung Pandang', '1990-04-04', 'L', 'Ablam', '085395921335', 'amran@gmail.com', 'Islam', '', 'SMA', 'IPA', '', 'SMA 1 Makassar', 'Jl. A.P Pettarani, Makassar', '0411010101', 'Abdul Haris', 'Wiraswasta', 'BTN Trika C.16, Tamalanrea - Makassar', '1234567890', 2, 3, 'A', 'A', 'M', 'Internet', '111111', '1', '0', '0', '1'),
+('1010111111', '20140411002', '2014-04-11', 'Mi Ho', NULL, NULL, 'P', NULL, NULL, 'mih0@gmail.com', NULL, NULL, NULL, NULL, NULL, 'SMK 1 Pinrang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'm1h0m1', '0', '0', '0', '1'),
+('1231231231', '20140411006', '2014-04-11', 'Jen', NULL, NULL, 'P', NULL, NULL, 'jen@gmail.com', NULL, NULL, NULL, NULL, NULL, 'SMK 1 Pinrang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'jenjen', '0', '0', '0', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `periode`
+--
+
+CREATE TABLE IF NOT EXISTS `periode` (
+  `taId` int(11) NOT NULL AUTO_INCREMENT,
+  `taPeriode` varchar(20) NOT NULL,
+  `taTahun` varchar(4) NOT NULL,
+  `taAktif` enum('0','1') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`taId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `periode`
+--
+
+INSERT INTO `periode` (`taId`, `taPeriode`, `taTahun`, `taAktif`) VALUES
+(1, '2014/2015', '2014', '1'),
+(2, '2015/2016', '2015', '0'),
+(3, '2013/2014', '2013', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan`
+--
+
+CREATE TABLE IF NOT EXISTS `pesan` (
+  `pId` int(11) NOT NULL AUTO_INCREMENT,
+  `pNama` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `pEmail` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `pSubjek` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `pPesan` text COLLATE latin1_general_ci NOT NULL,
+  `pJawab` text COLLATE latin1_general_ci NOT NULL,
+  `pTgl` date NOT NULL,
+  `pBalas` enum('0','1') COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pId`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `pesan`
+--
+
+INSERT INTO `pesan` (`pId`, `pNama`, `pEmail`, `pSubjek`, `pPesan`, `pJawab`, `pTgl`, `pBalas`) VALUES
+(1, 'Ardhe', 'ardhea014defourteenz@gmail.com', 'Persiapan Untuk Registrasi Ulang', 'Dokumen apa-apa yang dibutuhkan??', '', '2011-10-10', '0'),
+(10, 'Haris', 'abdul.haris@gmail.com', 'Batas Pendaftaran', 'Kapan pendaftaran berakhir??', '', '2014-04-09', '0'),
+(11, 'Haris, Amd.Kom', 'haris@gmail.com', 'Cara Cetak Formulir??', 'Bagaimana Cara cetak formulir??', '', '2014-04-11', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `uUname` varchar(20) NOT NULL,
+  `uNama` varchar(100) NOT NULL,
+  `uTelp` varchar(20) NOT NULL,
+  `uEmail` varchar(50) NOT NULL,
+  `uLevel` enum('1','2') NOT NULL DEFAULT '2',
+  `uPass` char(32) NOT NULL,
+  PRIMARY KEY (`uUname`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`uUname`, `uNama`, `uTelp`, `uEmail`, `uLevel`, `uPass`) VALUES
+('admin', 'Administrator', '085299688014', 'ardhea014defourteenz@gmail.com', '1', '21232f297a57a5a743894a0e4a801fc3'),
+('ardhe', 'Hardiknas', '085299688014', 'ardhe.webid@gmail.com', '2', '3975f5a70373d57491007ef0f8ca16d0'),
+('mresha', 'M. Resha', '1234567890', 'm.resha@gmail.com', '1', 'd9478a6470e9e40148e1b6b59044c2c6');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

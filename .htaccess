@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^home$ media.php [L]
+RewriteRule ^info$ media.php?pages=info [L]
+
+RewriteRule ^pendaftar$ media.php?pages=pendaftar [L]
+
+RewriteRule ^login$ media.php?pages=login [L]
+RewriteRule ^register$ media.php?pages=daftar [L]
+RewriteRule ^saveregister$ media.php?pages=daftar&act=save [L]
+
+RewriteRule ^akun$ media.php?pages=akun [L]
+RewriteRule ^biodata$ media.php?pages=bio [L]
+
+RewriteRule ^savebiodata$ media.php?pages=bio&act=save [L]
+RewriteRule ^nilai$ media.php?pages=nilai [L]
+RewriteRule ^savenilai$ media.php?pages=nilai&act=save [L]
+RewriteRule ^contact$ media.php?pages=kontak [L]
+RewriteRule ^kirimpesan$ media.php?pages=kontak&act=save [L]
+
+RewriteRule ^lapbio$ lap_bio.php [L]
+RewriteRule ^lapnilai$ lap_nilai.php [L]
+
+RewriteRule ^logout$ logout.php [L]
+
+ErrorDocument 404 http://www.atim.ac.id
+</IfModule>

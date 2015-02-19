@@ -1,0 +1,191 @@
+/* 
+=general
+=landing
+=blog
+=about
+=features
+=contact
+=pricing
+=footer
+*/
+
+/* ---------- =general ---------- */
+body{
+	padding-top: 60px;
+}
+
+section{
+	padding-top: 60px;
+}
+
+article{
+	margin-bottom: 40px;
+	padding: 0px 0px 40px;
+	border-bottom: 1px solid #DDD;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-left:0px !important;
+    padding-right: 0px !important;
+  }
+  .container{
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+  }
+}
+
+.right{
+	float:right;
+}
+
+.center{
+	text-align: center;
+}
+
+p.sub{
+	color: #888;
+}
+
+.stripe{
+	padding: 40px 0px;
+}
+
+.stripe-top{
+	background-color: #EEE;
+	margin-top: -18px;
+}
+
+.stripe-color{
+	background-color: #EEE;
+}
+
+.page-heading h1{
+	position: relative;
+	bottom: 20px;
+	line-height: 24px;
+}
+
+#btn-showcase td{
+	vertical-align: middle;
+}
+
+/* ---------- =landing ---------- */
+.stripe-hero{
+	margin-top: -60px;
+	padding-top: 60px;
+}
+
+.stripe-hero .item{
+	padding-left: 50px;
+	padding-right: 10px;
+}
+
+#download-now .span4{
+	text-align: center;
+}
+
+
+/* ---------- =blog ---------- */
+#blog{
+	padding-top: 30px;
+}
+
+	#blog img{
+		margin: 10px 0px;
+	}
+
+
+/* ---------- =about ---------- */
+#about img.thumbnail{
+	margin: 10px 0px;
+}
+
+/* ---------- =features ---------- */
+
+
+/* ---------- =contact ---------- */
+#contact{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+	#contact textarea{
+		height: 200px;
+	}
+
+
+/* ---------- =pricing ---------- */
+#pricing-table div{
+	background-color: #EEE;
+	text-align: center;
+	padding: 20px 0px;
+	min-height: 220px;
+}
+
+#pricing-table div.popular{
+	position: relative;
+	bottom: 10px;
+	right: 2px;
+	border: 2px solid #5BB75B;
+	margin-right: -4px;
+}
+
+	#pricing-table div ul{
+		margin-left: 0;
+	}
+
+	#pricing-table div li{
+		list-style-type: none;
+	}
+
+table tr th.empty-corner{
+	background-color: #FFF !important;
+	border-top: none;
+}
+
+#pricing-table-long td{
+	text-align: center;
+	width: 20%;
+}
+
+#pricing-table-long .packages th{
+	text-align: center;
+}
+
+/* ---------- =footer ---------- */
+footer .stripe{
+	background-color: #EEE;
+}
+
+footer .stripe-color{
+	background-color: #222;
+	color: #EEE;
+	padding-top: 40px;
+}
+
+footer .stripe-color p, footer .stripe-color address{
+	color: #888;
+}
+
+footer p.sub{
+	color: #555;
+}
+
+footer div.last{
+	padding-bottom: 20px;
+}
+
+footer div.divider{
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #333;
+	margin: 30px 0px;
+}
+
+#download-now h2{
+	text-align: center;
+}
+
+#download-now .btn{
+	margin-right: 12px;
+}
